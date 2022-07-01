@@ -17,6 +17,12 @@ jobs:
     - name: Generate markdown link
       run: |
         ./index.sh > _sidebar.md
+    
+    - name: Move to public directory
+      run: |
+        mkdir public
+        for fn in *.md */*.md; do mkdir "public/$(dirname $fm)""; mv "$fn" "public/$fn"; done
+        mv index.html public/index.html
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
