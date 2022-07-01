@@ -1,4 +1,4 @@
-name: Generate markdown link
+name: GitHub Pages
 
 on:
   workflow_dispatch:
